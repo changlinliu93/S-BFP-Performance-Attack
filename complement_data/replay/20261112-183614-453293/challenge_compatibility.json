@@ -1,0 +1,594 @@
+[
+  {
+    "username": "user_0002",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0002",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0010",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0010",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0016",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0016",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0013",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0013",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0039",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0039",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0040",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0040",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0017",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0017",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0029",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0029",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0023",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0023",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0034",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0034",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0009",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0009",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0027",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0027",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0037",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0037",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0022",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0022",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0012",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0012",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0005",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0005",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0032",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0032",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0026",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0026",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0024",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0024",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0028",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0028",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0041",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0041",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0004",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0004",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0021",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0021",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0007",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0007",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0011",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0011",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0036",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0036",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0019",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0019",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0003",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0003",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0008",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0008",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0020",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0020",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0018",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0018",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0025",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0025",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0014",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0014",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0035",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0035",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0006",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0006",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0033",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0033",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0030",
+    "modality": "canvas",
+    "old_items": 10,
+    "fresh_items": 10,
+    "matching_items": 0,
+    "all_content_matches": false
+  },
+  {
+    "username": "user_0030",
+    "modality": "audio",
+    "old_items": 9,
+    "fresh_items": 9,
+    "matching_items": 0,
+    "all_content_matches": false
+  }
+]

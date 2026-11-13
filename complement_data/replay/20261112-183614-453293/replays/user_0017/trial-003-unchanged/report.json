@@ -1,0 +1,223 @@
+{
+  "mode": "unchanged",
+  "modalities": {
+    "canvas": {
+      "measurements": [
+        {
+          "iteration": 1,
+          "challenge_id": "013430043e0e89a1af0d4b58d8d80c1c",
+          "http_status": 200,
+          "fingerprint": "8f1413294854c2cbba05282fad52ede3bb4e1c2d371cbc565dc1ebecb4ac0577",
+          "error": null,
+          "matches_recorded_baseline": false,
+          "raw_differs_from_recording": false,
+          "raw_sha256": "39b94b1f4c4e9bb0834da95fc2346eb9adfb7793c19622420fee7219071a6a25",
+          "timing": {
+            "rearrangement_ms": 0.0,
+            "challenge_received_to_upload_start_ms": 0.4789
+          },
+          "server_timing": {
+            "challenge": {
+              "challenge": 0.1309,
+              "total": 0.1903,
+              "storage": 0.0
+            },
+            "upload": {
+              "body_read": 0.2069,
+              "decode": 1.4689,
+              "primitive": 1.197,
+              "hash": 0.2052,
+              "total": 3.4464,
+              "storage": 1.7991
+            }
+          }
+        }
+      ],
+      "timing_summary": {
+        "rearrangement_ms": {
+          "count": 1,
+          "min_ms": 0.0,
+          "median_ms": 0.0,
+          "mean_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        },
+        "challenge_received_to_upload_start_ms": {
+          "count": 1,
+          "min_ms": 0.4789,
+          "median_ms": 0.4789,
+          "mean_ms": 0.4789,
+          "p95_ms": 0.4789,
+          "max_ms": 0.4789
+        }
+      },
+      "report_status": 200,
+      "report_result": {
+        "alertMessage": "Canvas fingerprints did not match the baseline.",
+        "allStable": false,
+        "baselineHash": "1cea0ca3b34580ba4692f5690a3d39e344748b23bdfd3baf29df7de57553fa8f",
+        "mismatchRuns": [
+          1
+        ],
+        "session_id": "5aaf668c95bf32d99e3c4ebd424df1e6",
+        "status": "ok",
+        "totalRuns": 1
+      }
+    },
+    "audio": {
+      "measurements": [
+        {
+          "iteration": 1,
+          "challenge_id": "c133047489c76a9f69bc8365dc2b2326",
+          "http_status": 400,
+          "fingerprint": null,
+          "error": "Unexpected audio buffer length",
+          "matches_recorded_baseline": false,
+          "raw_differs_from_recording": false,
+          "raw_sha256": "170e1196ed205417a6fe21e3509cd37838f0d430c10267ba6e4268e64eb61191",
+          "timing": {
+            "rearrangement_ms": 0.0,
+            "challenge_received_to_upload_start_ms": 0.0589
+          },
+          "server_timing": {
+            "challenge": {
+              "challenge": 0.2587,
+              "total": 0.3425,
+              "storage": 0.0
+            },
+            "upload": {
+              "body_read": 11.6938,
+              "primitive": 0.0819,
+              "total": 11.943,
+              "storage": 0.0
+            }
+          }
+        }
+      ],
+      "timing_summary": {
+        "rearrangement_ms": {
+          "count": 1,
+          "min_ms": 0.0,
+          "median_ms": 0.0,
+          "mean_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        },
+        "challenge_received_to_upload_start_ms": {
+          "count": 1,
+          "min_ms": 0.0589,
+          "median_ms": 0.0589,
+          "mean_ms": 0.0589,
+          "p95_ms": 0.0589,
+          "max_ms": 0.0589
+        }
+      }
+    }
+  },
+  "fresh_challenge_ids_only": true,
+  "reconstruction_mapping": "recorded-position",
+  "iterations_per_modality": 1,
+  "requests": [
+    {
+      "endpoint": "login",
+      "status": 200,
+      "rpc_wall_ms": 92.4043,
+      "rpc_adjusted_ms": 92.4043,
+      "server_ms": {
+        "total": 71.7233,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "session/acquire",
+      "status": 200,
+      "rpc_wall_ms": 2.7733,
+      "rpc_adjusted_ms": 2.7733,
+      "server_ms": {
+        "total": 0.1071,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "canvas/get_string_config",
+      "status": 200,
+      "rpc_wall_ms": 1.8836,
+      "rpc_adjusted_ms": 1.8836,
+      "server_ms": {
+        "challenge": 0.1309,
+        "total": 0.1903,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "canvas/upload_img",
+      "status": 200,
+      "rpc_wall_ms": 21.6522,
+      "rpc_adjusted_ms": 19.8531,
+      "server_ms": {
+        "body_read": 0.2069,
+        "decode": 1.4689,
+        "primitive": 1.197,
+        "hash": 0.2052,
+        "total": 3.4464,
+        "storage": 1.7991
+      }
+    },
+    {
+      "endpoint": "user/canvas_stability",
+      "status": 200,
+      "rpc_wall_ms": 7.5175,
+      "rpc_adjusted_ms": 4.2966999999999995,
+      "server_ms": {
+        "body_read": 0.0318,
+        "verify": 1.4416,
+        "total": 2.7629,
+        "storage": 3.2208
+      }
+    },
+    {
+      "endpoint": "audio/get_snippets_config",
+      "status": 200,
+      "rpc_wall_ms": 19.3897,
+      "rpc_adjusted_ms": 19.3897,
+      "server_ms": {
+        "challenge": 0.2587,
+        "total": 0.3425,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "audio/upload_audio",
+      "status": 400,
+      "rpc_wall_ms": 15.3177,
+      "rpc_adjusted_ms": 15.3177,
+      "server_ms": {
+        "body_read": 11.6938,
+        "primitive": 0.0819,
+        "total": 11.943,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "session/release",
+      "status": 200,
+      "rpc_wall_ms": 10.9578,
+      "rpc_adjusted_ms": 9.703000000000001,
+      "server_ms": {
+        "body_read": 0.0393,
+        "verify": 7.2852,
+        "total": 7.4196,
+        "storage": 1.2548
+      }
+    }
+  ],
+  "execution": "sequential Canvas then Audio; no browser seed/render step",
+  "session_id": "5aaf668c95bf32d99e3c4ebd424df1e6",
+  "release_status": 200,
+  "login_outcome": {
+    "message": "Login failed: Audio and Canvas verification did not both complete",
+    "result": "error",
+    "session_id": "5aaf668c95bf32d99e3c4ebd424df1e6",
+    "status": "ok"
+  }
+}

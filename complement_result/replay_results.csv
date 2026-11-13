@@ -1,0 +1,223 @@
+﻿experiment,username,session_id,trial,mode,completed_decision,success,result,failure_observations
+recorded-position,user_0002,1e5465de6cc8e8ad9b7b783eaf2226b6,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0002,b346e945bcc3b86aeee9b2bd9a97812a,1,rearranged,True,True,success,
+recorded-position,user_0002,5da154ef08eae5ccd01d1fdaf2c283b6,2,rearranged,True,True,success,
+recorded-position,user_0002,bf0e7864135012aab1afb16c5dd8acc7,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0002,acb11fa50176b21a85c4bdceed0cfbd3,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0002,e750a41fb8a35480d489992d4bae1965,3,rearranged,True,True,success,
+recorded-position,user_0010,016d7b020a243d604938af770bc41ee0,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0010,32f8ec2039a8945c509dcd5a232f2e74,1,rearranged,True,True,success,
+recorded-position,user_0010,f9e65ef2495c9c67c43c355d07167954,2,rearranged,True,True,success,
+recorded-position,user_0010,327fd940697eceabdec2711e9d84daf7,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0010,0e98c86683a120ca2bc492c7a143fbcb,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0010,0ca4f4c920d2320c1dddf801ec6ea910,3,rearranged,True,True,success,
+recorded-position,user_0016,0dbe623149eb1a2415a01f91864d60e9,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0016,1570cfe62784870ae0d2acf1921c67c9,1,rearranged,True,True,success,
+recorded-position,user_0016,318a034458323d94ad67dfd5d34df196,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0016,8eea23069ccd66d8621ab68bdf8d6cdd,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0016,9a63539ed7fa5ddfb37c2344ebe94822,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0016,4748a33ab64c76785b96e1b918d2a456,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0013,cfac5534d6879d4a88901113d50dffa8,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0013,d134ba722c40e9978fcbccd93beeddd6,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0013,4bd0d3482a618b79742ce03dd4a215f0,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0013,9ef157fc17e1a449416fa96adcfbb528,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0013,6abe119b52f4076b186938056e761ae0,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0013,06db9209ffdeb23314ccc84e6c4a20b1,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0039,393fbc5f6804f184445c61b40ab50f00,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0039,7b3a9f4cbd38b938ffb09161cb2a75fd,1,rearranged,True,True,success,
+recorded-position,user_0039,cc6e89aaa71bef8947782ed5ad9b678b,2,rearranged,True,True,success,
+recorded-position,user_0039,b96405611e830cb0e47bca7e9b1b29b2,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0039,842b5678251ceb57575ea4ae1f78dde8,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0039,caefebd66f119346d426e7b504771525,3,rearranged,True,True,success,
+recorded-position,user_0040,db954c1e1f0a6b51c3bd320d37d45a2e,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0040,da92863281196f04c39386a3666d6d3e,1,rearranged,True,True,success,
+recorded-position,user_0040,419997b78b7e0696e932e00c3d0016aa,2,rearranged,True,True,success,
+recorded-position,user_0040,b40cb62374905565a46a460fe34bc4cc,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0040,6a856f43d281f6c7a73fca24010784dd,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0040,0ee731980425175706e44ed6c2488129,3,rearranged,True,True,success,
+recorded-position,user_0017,0d86fa69fa17fe8fb035515eddbd2e54,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0017,62475647d12818a6f1296c9157bb4182,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0017,da6004a6ae4e3a0290eac1b3974b6167,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0017,2b320d3bbfd8842f60bf22829ccc166c,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0017,5aaf668c95bf32d99e3c4ebd424df1e6,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0017,9335724d69a633649eace2b278ddcf57,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0029,7b285aeb53e8c7ef7a325e2ccb2697e7,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0029,8753ab387ecec607267e500ea45c336c,1,rearranged,True,True,success,
+recorded-position,user_0029,5cfef1bcc76f80d3e83500f84013ce41,2,rearranged,True,True,success,
+recorded-position,user_0029,bcaf4d8c21845684784beb6423fa36a1,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0029,05aa67e29fe9159f48d92dcc5e8f4db1,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0029,9c7d41106de932e4b3e22ae268c0e786,3,rearranged,True,True,success,
+recorded-position,user_0023,3079a8493be8246cae936908581ca31d,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0023,2852b6e9c4597645bf953a98d1cfaf40,1,rearranged,True,True,success,
+recorded-position,user_0023,9f8138c83a7ad8a31ad4fc7a005f9318,2,rearranged,True,True,success,
+recorded-position,user_0023,8ff2e148358ef8bb71f7510e6030a932,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0023,7eaf1de8bc610b83058e84dfe8cbc5fb,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0023,1c8b9ab03d118cba274c4ae76b3dc5da,3,rearranged,True,True,success,
+recorded-position,user_0034,224bc151d5ffda2edb19213b0ac3aa7e,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0034,3478d6c3c9164d85c1e818b1152317d3,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0034,c3dc271702bc98c94b19fa4e22ed100e,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0034,2b94ef3e35b3eedf0f49c5c2419569e4,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0034,865821f2936b5be6b05f86f4b93dfda0,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0034,618dd6e5ff5cfe26f1a5bc8af60e81fa,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0009,07ab098d2f30bf8a578c421218341602,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0009,095ad3bb4e36bd093de2058030412bc7,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0009,c9fa1d0ac39ed041288b52e05cbfece1,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0009,f5d3b76b402924effdb125657642f5fb,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0009,bcbb9b13619f1067ee866523d7b07679,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0009,402b8c6b06ee055768d58e9d6e95df82,3,rearranged,True,True,success,
+recorded-position,user_0027,69f9205803a571584bdc294945c91302,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0027,59bde8f5c4bb3db9e5593c9c9f37628d,1,rearranged,True,True,success,
+recorded-position,user_0027,e4011f3c74542a5206545e6d12d8a7ab,2,rearranged,True,True,success,
+recorded-position,user_0027,fd45611f8316465be303f5464aa1356e,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0027,4c65e31377147ecc3277956836fe90ef,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0027,45991e40de18e5d27b90f49667a56cec,3,rearranged,True,True,success,
+recorded-position,user_0037,a121a0734b86e49c81cb583abc4bfe12,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0037,d9c968cec6c790d772820b77c52fc024,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0037,82e1d92413d7bf2483541253ea0bf276,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0037,7a05623000b717234ba9221e33b97fac,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0037,b8b97aa3e7879fe03efc4bba0dd22603,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0037,6957d82daf1997c38fc4ff479929c2c5,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0022,7c6e6ca7ec0ccf0507732c8f1abbafb6,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0022,6098bd7742964c4ae5060a75fd99d49f,1,rearranged,True,True,success,
+recorded-position,user_0022,64ed6cb282603d2ff367da87ae569884,2,rearranged,True,True,success,
+recorded-position,user_0022,b71229118a722ec5b590a547694adcc7,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0022,c81a46b3b3e0afb7cace881a6f10f287,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0022,3c1fb474706d6eaac1c532f959058ed5,3,rearranged,True,True,success,
+recorded-position,user_0012,6917109763f0c91b41c73bab01622ca3,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0012,d3fd536b34d754f42742cda7d0a79fc6,1,rearranged,True,True,success,
+recorded-position,user_0012,c51ae9e4aac99670a0cbafb2cfcaff22,2,rearranged,True,True,success,
+recorded-position,user_0012,ff0bab14e69f9340dbb9b9a80ecff766,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0012,89bbc03000a5d62181f5a2e4ea11791f,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0012,453bb95f77cff96f1198faa8b509fe25,3,rearranged,True,True,success,
+recorded-position,user_0005,f7fc4803701c1dd6b460ee0bc1d426c5,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0005,1cc7182d91fc14e0b324c548eededdfb,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0005,097f66ae71ba2405ddd560a70d14de54,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0005,afe57710da61c8fe706e3bb523604d53,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0005,a24f57bffddc0b2a57b9bd510df36202,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0005,e6cec830c3bf8118e5d11e3cba46c6c6,3,rearranged,True,True,success,
+recorded-position,user_0032,af81b2b0316763a8fb5b8346e064309e,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0032,c2cb89ac2040b366b084d371c98bb6f5,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0032,62375cd20b645334ddbac0e57d249bdb,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0032,401ecf194080fe1a763b49cbe890ee0f,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0032,5b2b6624d31f8e1e823be9cabaf091ff,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0032,15f3ea02c16f0006897a737cfc5295e8,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0026,36de8b7159bd5316c2a54913de2a6bfe,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0026,0596de39d99cfb9cd4bf2dee6970c35a,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0026,0002252e6cda7837983f0514909c8aaf,2,rearranged,True,True,success,
+recorded-position,user_0026,0811dc3f63e6997f1dbd14a81aaf9998,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0026,67619d53bb05270c168457852d60be3d,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0026,aeda491a7efe65802b303dcd44fa15d2,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0024,b4123e346385d41ed2bd81f4134497a1,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0024,82efc0e351b63f8210d472b3de3832d5,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0024,f1960eab8fc649013b243a51518b9a02,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0024,46a621a708380dabaa19ff43f071ab7e,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0024,80696a843756003b98efd5728f941470,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0024,88bf6ed284a181e8f3eab659a595ee9a,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0028,a5afaaf5c3325e72436f70e0e13a8374,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0028,477f35f9dc0d275a79c664621c362c9d,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0028,e55e9ac5aeda180451b4657845fd5c80,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0028,0f764c2320c82ea5dbd65a70f631b4f1,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0028,2cd932c02b9fb664a08a29ebeddc3c7c,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0028,77699cdf53b03ce5ccbf93d55323e7dc,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0041,0a1b8a4f71db8cb85e32cd3b292086d8,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0041,9b6a46fbdfb470db1a794baca1b4bd28,1,rearranged,True,True,success,
+recorded-position,user_0041,62c1046266218f60c30e3a3d60b0ab25,2,rearranged,True,True,success,
+recorded-position,user_0041,ee7ba31fbee3c8314b846ec4ccf316f4,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0041,78c707122741abbf38e75b2445bbbf85,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0041,a7a27232ab1d05c23ccb3a0c6ee6a876,3,rearranged,True,True,success,
+recorded-position,user_0004,c2ad15a19c2375885c9527d6c446443c,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0004,a353b891b675e3ca3f96647412354e6e,1,rearranged,True,True,success,
+recorded-position,user_0004,e23cc5752ae6331d3f6247f49baf0daf,2,rearranged,True,True,success,
+recorded-position,user_0004,e0ee91777ae4b239d07293d7b5969a96,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0004,890364418ef83a2e54dece07b3b72c8c,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0004,e92eaf33e35386769ceb801b1001e49e,3,rearranged,True,True,success,
+recorded-position,user_0021,fd09e63ffad2d65e9755b743c22a7dec,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0021,5ca3b74a5edf445039f9e54d8a9da964,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0021,ccb2fa6edc1d0fd53ed0c95a845571da,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0021,db27aaa4639b80bab0a6ea808ed68879,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0021,23e9d607e31b36227006c403378cbafc,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0021,978a4f7ddb2091a27581bd2f2a98959e,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0007,e68eb06cdb75a83a2b1dc8947c887362,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0007,95c72564e505b4e018d78449f9ed7f1a,1,rearranged,True,True,success,
+recorded-position,user_0007,44eb1d6b9341845933171681c53135f8,2,rearranged,True,True,success,
+recorded-position,user_0007,ea3ad9aac151a56f799150e7a13bad62,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0007,daa24415d84b7501ad07d5c5d071b6d5,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0007,095a51fc899c73560f084701d25e29b4,3,rearranged,True,True,success,
+recorded-position,user_0011,8462885ece5b09a0d23eafb1b7301d4e,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0011,8bd6d8206dff2f690802d3a77656f092,1,rearranged,True,True,success,
+recorded-position,user_0011,8271e8ba9efc98fcfcb94f1ca4a9df0f,2,rearranged,True,True,success,
+recorded-position,user_0011,43f51212d87e810885da9967af0801ce,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0011,c7a26ad50eb17df578b4d49fb28ed280,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0011,3103946645bb36efe92334f471a4f27b,3,rearranged,True,True,success,
+recorded-position,user_0036,55f7c291cbb6b71885551c886353b205,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0036,c44ef1944f9e07675cb567cc5ac9ebc1,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0036,9b76167dbbde70d36be7848c3fdcf099,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0036,eb9de7b5a34f4a4f9a6dbc0d31bc83d2,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0036,c7c26422655e5f2d0d3e7cedac32d986,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0036,7e493bc02160b58917421f997efd7850,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0019,0d4a1e37fc19e34675fe30baa14592a5,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0019,75744fdca4023f3806efd85d8fe9139a,1,rearranged,True,True,success,
+recorded-position,user_0019,f098f29f223c6e73c5a18ab638344a38,2,rearranged,True,True,success,
+recorded-position,user_0019,942a644dc992b1197e92d40fd1611b12,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0019,5516cb481faf8990dc90e2cdc63fe282,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0019,09c90af0fd491d4b3ae25c80aaa1655f,3,rearranged,True,True,success,
+recorded-position,user_0003,2539f490ff356f86a86aaeb8111651d4,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0003,18ed5570eba94b05c25feaf569cae6fa,1,rearranged,True,True,success,
+recorded-position,user_0003,0ae1f541027a71ff3e7030cedad8e29b,2,rearranged,True,True,success,
+recorded-position,user_0003,d06a6c5ebd39c947ea20ab3bc2055add,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0003,fbab028a0486c4ff8ec298dd5f1d5bd0,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0003,56a16fe32126134946a79780f214eb15,3,rearranged,True,True,success,
+recorded-position,user_0008,78b6659553c5f3da03bed394e52ed704,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0008,da532ee129688c59049f8d5e05d44e1d,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0008,7ee3168d89721a46fe60ef2f2db526ff,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0008,bd34571291997fba2f985252f0d55723,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0008,53a92985e0a12c55e5eabea91f6ff10e,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0008,dfa6ba4b25b2a7c4530195ef8eff7ff6,3,rearranged,True,True,success,
+recorded-position,user_0020,590ce03c59b2ad2cfc99973e2ba98766,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0020,e5102f5892ea811bb19c77da969046eb,1,rearranged,True,True,success,
+recorded-position,user_0020,0cbd10f114232a81d95321c5435303eb,2,rearranged,True,True,success,
+recorded-position,user_0020,4cb503445a37fae11a981bf0454b70c6,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0020,a3a970c3df4b362284ee91a1f9c0285d,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0020,4e2a90b9e33866be1c553ae0f693b6d5,3,rearranged,True,True,success,
+recorded-position,user_0018,4ae6467d8ef9141fa3d44af8d05dfc6d,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0018,83a8c4b6fa8c95e3aaedb14c9c319ac7,1,rearranged,True,True,success,
+recorded-position,user_0018,a62064d3f7deaef76bf23de7aa68ca19,2,rearranged,True,True,success,
+recorded-position,user_0018,f596459d466a8826fa805964b590e1a5,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0018,7e152e671abeaa3439b24467bc591045,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0018,1838beb14478c2df4e7ed3de61bead94,3,rearranged,True,True,success,
+recorded-position,user_0025,a9522d1632af66e9df499be04ddac3d1,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0025,18fe4b33c4c631a661605e29a01d8691,1,rearranged,True,True,success,
+recorded-position,user_0025,125e825381846a794ed7455be6826fc7,2,rearranged,True,True,success,
+recorded-position,user_0025,2ed1d1513e36d49103692fb962080f16,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0025,f8eb6ab5e2a8717125dd8be51740bff3,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0025,ea98a999511ec8381061a69a7707f9f0,3,rearranged,True,True,success,
+recorded-position,user_0014,c389212d8ec731b921bc0740416a7bfb,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0014,721dbeeba5b6d3d3551b1134083db095,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0014,60e2a984a1e2d260f44b86af2b6e3774,2,rearranged,True,True,success,
+recorded-position,user_0014,b51db91672f0a5b646db52e1f2af0aed,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0014,e32745f617129315872a5fc958defc30,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0014,994dc4497d11ec2f461649cc15568e2b,3,rearranged,True,True,success,
+recorded-position,user_0035,711203b953664e1e67217254139f9e57,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0035,474f2c1bbfcdaf4cccb745eee66227dd,1,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0035,78421aaf7ef6e6f7ea5b1e2a01c5ece7,2,rearranged,True,True,success,
+recorded-position,user_0035,679af1c5cfddafb7dbf400d3bffa1dfa,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0035,7725eb5fe6c3546513b31c3ef6c1d1ad,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0035,0d643f350313c2e60a23a937d2de8c3c,3,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0006,6a9388e117acf267c619e961ffa04b06,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0006,33774a2b9a40f2ead43f97a305183b1d,1,rearranged,True,True,success,
+recorded-position,user_0006,83adfd7f36dbd665528398281c8f4850,2,rearranged,True,True,success,
+recorded-position,user_0006,dac5ab9002fa4a57d35812969da8fef5,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0006,30f8625833eb300f622453ea447f288f,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0006,524007d980f70459e15f0d74bfe1f5b5,3,rearranged,True,True,success,
+recorded-position,user_0033,140ec7494bcfbf865d61f043410b6843,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0033,ba68b73336908db3a9bd2c56d80e316d,1,rearranged,True,True,success,
+recorded-position,user_0033,1b07a621b98375df719b286982ed3a55,2,rearranged,True,True,success,
+recorded-position,user_0033,e69af96344df8c6f20d9e26b8289331d,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0033,bfc685672660d0c1d6c9268a5a5b33a0,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0033,770928e9ec8f7925dedd16e485d7aac0,3,rearranged,True,True,success,
+recorded-position,user_0030,40f84490c21dc84b207247aea7fe7da0,1,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0030,30186abd006f798975b44c22d55f4c39,1,rearranged,True,True,success,
+recorded-position,user_0030,40b058206816d60fba606fb296533684,2,rearranged,True,False,failure,audio baseline hash mismatch
+recorded-position,user_0030,d150b6c8d850ac569ed4176367ee6113,2,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0030,f4842913489c380305e90b9587591efd,3,unchanged,True,False,error,audio upload rejected: Unexpected audio buffer length; canvas baseline hash mismatch; final verification incomplete
+recorded-position,user_0030,5460b323d66641f7d97705269a3ba55f,3,rearranged,True,True,success,

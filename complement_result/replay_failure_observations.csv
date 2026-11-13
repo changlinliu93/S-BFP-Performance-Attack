@@ -1,0 +1,5 @@
+﻿experiment,mode,observation,attempts
+recorded-position,rearranged,audio baseline hash mismatch,41
+recorded-position,unchanged,audio upload rejected: Unexpected audio buffer length,111
+recorded-position,unchanged,canvas baseline hash mismatch,111
+recorded-position,unchanged,final verification incomplete,111

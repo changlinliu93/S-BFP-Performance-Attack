@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Audio Stability Test</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      #runBtn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+        transition: all 0.2s ease;
+      }
+      #runBtn:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+        box-shadow: none;
+        opacity: 0.75;
+      }
+      #status {
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 9999px;
+        background: #e2e8f0;
+        color: #1e293b;
+      }
+      #status.success {
+        background: #dcfce7;
+        color: #166534;
+      }
+      #status.error {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      #hashDisplay {
+        font-family: monospace;
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 10px 14px;
+        border-radius: 6px;
+        letter-spacing: 0.04em;
+        overflow-x: auto;
+      }
+      #results {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        padding: 16px;
+        max-height: 320px;
+        overflow-y: auto;
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+      }
+      .result-entry {
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        background: #f1f5f9;
+        font-family: monospace;
+      }
+      .result-entry.stable {
+        background: #dcfce7;
+        color: #166534;
+      }
+      .result-entry.unstable {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .summary {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="toolbar">
+          <button id="runBtn">Run Audio Stability Test</button>
+          <span id="status" class="info">Idle</span>
+        </div>
+        <div id="hashDisplay">Current Hash: Not generated</div>
+        <div id="results"></div>
+      </div>
+
+    <script type="module">
+      import { getSeedString } from "/static/preliminary_fingerprint.js";
+      import { PerformanceMonitor } from "/static/performance_monitor.js";
+      import { renderAudio } from "/audio/static/render.js";
+
+      // Run one rendering per authentication.
+      const TEST_RUNS = 1;
+      const SNIPPET_COUNT = 9;
+      const SAMPLE_RATE = 44100;
+      const SNIPPET_DURATION_MS = 100;
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const autoStart = queryParams.get("autostart") === "1";
+
+      const parentOrigin = window.location.origin;
+      const runBtn = document.getElementById("runBtn");
+      const statusEl = document.getElementById("status");
+      const hashDisplay = document.getElementById("hashDisplay");
+      const resultsContainer = document.getElementById("results");
+      const currentUser = localStorage.getItem("currentUser");
+      let isRunning = false;
+
+      let monitor = null;
+
+      function notifyParent(type, payload = {}) {
+        if (monitor && (type === "testComplete" || type === "testError")) {
+          const report = monitor.finish(type === "testComplete" ? "complete" : "error");
+          window.sBfpPerformance = report;
+          payload = { ...payload, performance: report };
+        }
+        if (!autoStart) return;
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage({ source: "audio", type, payload }, parentOrigin);
+        }
+      }
+
+      function updateStatus(message, tone = "info") {
+        statusEl.textContent = message;
+        statusEl.className = tone === "success" ? "success" : tone === "error" ? "error" : "info";
+      }
+
+      function renderHash(hash) {
+        hashDisplay.textContent = `Current Hash: ${hash}`;
+      }
+
+      function appendResult(iteration, hash, matchesBaseline) {
+        const entry = document.createElement("div");
+        entry.className = `result-entry ${matchesBaseline ? "stable" : "unstable"}`;
+        entry.textContent = `Run ${iteration}: ${hash} ${matchesBaseline ? "(stable)" : "(changed)"}`;
+        resultsContainer.appendChild(entry);
+      }
+
+      function appendSummary(allStable, uniqueHashes, totalRuns) {
+        const summary = document.createElement("div");
+        summary.className = "summary result-entry";
+        summary.textContent = allStable
+          ? `All ${totalRuns} hashes matched the baseline.`
+          : `Hash differences detected: unique hashes are ${uniqueHashes.join(", ")}`;
+        resultsContainer.appendChild(summary);
+      }
+
+      function displayError(message, target = resultsContainer, anchor = null) {
+        const entry = document.createElement("div");
+        entry.className = "result-entry unstable";
+        entry.textContent = message;
+        if (anchor && anchor.parentElement === target) {
+          target.insertBefore(entry, anchor);
+        } else {
+          target.appendChild(entry);
+        }
+      }
+
+      async function fetchAudioConfig(seed) {
+        const url = `/audio/get_snippets_config/${encodeURIComponent(seed)}/${SNIPPET_DURATION_MS}/${SAMPLE_RATE}/${SNIPPET_COUNT}/20/80/200/2000`;
+        const response = await monitor.fetch("challenge", url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch audio config: ${response.status} ${response.statusText}`);
+        }
+        const data = await monitor.read(response, "json");
+        if (!Array.isArray(data.frequencies) || !Array.isArray(data.waveforms) || !data.challenge_id) {
+          throw new Error("Audio config missing required fields");
+        }
+        return data;
+      }
+
+      async function runSingleIteration(iteration, seed) {
+        const config = await monitor.measure("challenge", () => fetchAudioConfig(seed));
+        const audio = await monitor.measure("dynamic", () => renderAudio(config, monitor));
+        monitor.recordAudio(audio);
+        const { response, result } = await monitor.measure("result", async () => {
+          const response = await monitor.fetch("audio_upload", `/audio/upload_audio/${config.challenge_id}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/octet-stream" },
+            body: audio,
+          });
+          const result = await monitor.read(response, "json");
+          return { response, result };
+        });
+        if (!response.ok) {
+          throw new Error(result.error || `Audio upload failed: HTTP ${response.status}`);
+        }
+        return {
+          iteration,
+          hash: result.hash,
+          waveformHash: result.hash,
+          audioConfig: config,
+        };
+      }
+
+      async function persistAudioStability({ seed, baseline, runs, uniqueHashes, allStable }) {
+        if (!currentUser) {
+          const message = "No signed-in user detected; unable to save stability record.";
+          displayError(message);
+          return { success: false, message };
+        }
+        try {
+          const payload = {
+            username: currentUser,
+            seed,
+            baselineHash: baseline,
+            allStable,
+            uniqueHashes,
+            testRuns: runs.map((run) => ({
+              iteration: run.iteration,
+              hash: run.hash,
+              waveformHash: run.waveformHash || run.hash,
+              matchesBaseline: run.matchesBaseline,
+              audioConfig: run.audioConfig,
+            })),
+            audioConfig: runs[0]?.audioConfig || null,
+            timestamp: new Date().toISOString(),
+          };
+
+          const response = await monitor.fetch("stability_report", "/user/audio_stability", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const raw = await monitor.read(response, "text");
+          let parsed = null;
+          if (raw) {
+            try {
+              parsed = JSON.parse(raw);
+            } catch (err) {
+              console.warn("Failed to parse server response:", err);
+            }
+          }
+
+          if (!response.ok || (parsed && parsed.status === "error")) {
+            const errorMessage =
+              (parsed && parsed.error) || raw || response.statusText || "Unknown error";
+            throw new Error(errorMessage);
+          }
+
+          return { success: true, result: parsed };
+        } catch (error) {
+          const message = `Failed to save stability record: ${error.message}`;
+          displayError(message);
+          return { success: false, message };
+        }
+      }
+
+      async function runAudioStabilityTest({ autoReport = false } = {}) {
+        if (isRunning) return;
+        monitor = new PerformanceMonitor("audio");
+        isRunning = true;
+        runBtn.disabled = true;
+        resultsContainer.innerHTML = "";
+        renderHash("Not generated");
+        updateStatus("Starting audio test...");
+        notifyParent("testStarted");
+
+        try {
+          const seed = await monitor.measure("static", getSeedString);
+          const runs = [];
+          let baseline = null;
+
+          for (let i = 0; i < TEST_RUNS; i++) {
+            monitor.round = i + 1;
+            updateStatus(`Running audio generation ${i + 1}/${TEST_RUNS}...`);
+            const iteration = await runSingleIteration(i + 1, seed);
+            const matchesBaseline = baseline === null || iteration.hash === baseline;
+
+            runs.push({
+              iteration: iteration.iteration,
+              hash: iteration.hash,
+              waveformHash: iteration.waveformHash,
+              matchesBaseline,
+              audioConfig: iteration.audioConfig,
+            });
+
+            if (baseline === null) {
+              baseline = iteration.hash;
+            }
+
+            renderHash(iteration.hash);
+            appendResult(i + 1, iteration.hash, matchesBaseline);
+          }
+
+          const hashes = runs.map((run) => run.hash);
+          const uniqueHashes = [...new Set(hashes)];
+          const allStable = uniqueHashes.length === 1;
+          appendSummary(allStable, uniqueHashes, runs.length);
+
+          monitor.round = null;
+          const persistResult = await monitor.measure("result", () => persistAudioStability({
+            seed,
+            baseline,
+            runs,
+            uniqueHashes,
+            allStable,
+          }));
+
+          if (!persistResult || persistResult.success === false) {
+            const message = persistResult?.message || "Failed to save audio test results";
+            updateStatus(message, "error");
+            notifyParent("testError", { message });
+            return;
+          }
+
+          const serverResult = persistResult.result || {};
+          const mismatchRuns = hashes
+            .map((hash, index) => (hash === baseline ? null : index + 1))
+            .filter((value) => value !== null);
+          const payloadMismatchRuns = Array.isArray(serverResult.mismatchRuns)
+            ? serverResult.mismatchRuns
+            : mismatchRuns;
+          const serverAllStable =
+            typeof serverResult.allStable === "boolean"
+              ? serverResult.allStable
+              : allStable;
+          const alertMessage =
+            serverResult.alertMessage ||
+            (allStable
+              ? `Audio stable: all ${hashes.length} hashes matched the baseline.`
+              : `Audio inconsistency detected: runs ${mismatchRuns.join(", ")} deviated.`);
+
+          updateStatus(alertMessage, serverAllStable ? "success" : "error");
+          notifyParent("testComplete", {
+            baselineHash: serverResult.baselineHash || baseline,
+            allStable,
+            uniqueHashes,
+            totalRuns: hashes.length,
+            mismatchRuns: payloadMismatchRuns,
+            serverAllStable,
+            alertMessage,
+          });
+        } catch (error) {
+          const message = `Audio test failed: ${error.message}`;
+          displayError(message);
+          updateStatus(message, "error");
+          notifyParent("testError", { message: error.message || message });
+        } finally {
+          isRunning = false;
+          if (!autoReport) {
+            runBtn.disabled = false;
+          }
+        }
+      }
+
+      runBtn.addEventListener("click", () => runAudioStabilityTest({ autoReport: false }));
+
+      if (autoStart) {
+        runBtn.style.display = "none";
+        setTimeout(() => runAudioStabilityTest({ autoReport: true }), 300);
+      }
+    </script>
+  </body>
+</html>

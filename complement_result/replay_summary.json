@@ -1,0 +1,22 @@
+[
+  {
+    "experiment": "recorded-position",
+    "mode": "rearranged",
+    "successes": 70,
+    "completed_attempts": 111,
+    "success_percent": 63.06306306306306,
+    "tested_accounts": 37,
+    "successful_accounts": 28,
+    "setup_errors": 0
+  },
+  {
+    "experiment": "recorded-position",
+    "mode": "unchanged",
+    "successes": 0,
+    "completed_attempts": 111,
+    "success_percent": 0.0,
+    "tested_accounts": 37,
+    "successful_accounts": 0,
+    "setup_errors": 0
+  }
+]

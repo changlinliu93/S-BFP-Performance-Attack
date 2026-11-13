@@ -1,0 +1,26 @@
+[
+  {
+    "experiment": "recorded-position",
+    "mode": "rearranged",
+    "observation": "audio baseline hash mismatch",
+    "attempts": 41
+  },
+  {
+    "experiment": "recorded-position",
+    "mode": "unchanged",
+    "observation": "audio upload rejected: Unexpected audio buffer length",
+    "attempts": 111
+  },
+  {
+    "experiment": "recorded-position",
+    "mode": "unchanged",
+    "observation": "canvas baseline hash mismatch",
+    "attempts": 111
+  },
+  {
+    "experiment": "recorded-position",
+    "mode": "unchanged",
+    "observation": "final verification incomplete",
+    "attempts": 111
+  }
+]

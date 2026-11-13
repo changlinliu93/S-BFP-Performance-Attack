@@ -1,0 +1,336 @@
+{
+  "analysis_version": 3,
+  "analysis_created_utc": "2026-11-13T22:44:12.831016+00:00",
+  "accounts": 38,
+  "sessions": 101,
+  "included_sessions": 88,
+  "accounts_with_included_sessions": 37,
+  "registration_sessions": 38,
+  "login_sessions": 63,
+  "technical_errors": 9,
+  "technical_login_errors": 8,
+  "incorrect_password_logins": 4,
+  "changed_context_logins_before_exclusions": 5,
+  "changed_context_technical_exclusions": 2,
+  "changed_context_platform_changes_verified": 0,
+  "eligible_login_acceptance": {
+    "accepted": 48,
+    "attempts": 51,
+    "percent": 94.11764705882352
+  },
+  "overall_decisions": {
+    "eligible_logins": 51,
+    "same_context_logins": 48,
+    "changed_context_logins": 3,
+    "unknown_context_logins": 0,
+    "overall_acceptance": {
+      "numerator": 48,
+      "denominator": 51,
+      "percent": 94.11764705882352
+    },
+    "same_context_acceptance": {
+      "numerator": 48,
+      "denominator": 48,
+      "percent": 100.0
+    },
+    "same_context_false_rejection": {
+      "numerator": 0,
+      "denominator": 48,
+      "percent": 0.0
+    },
+    "changed_context_correct_rejection": {
+      "numerator": 3,
+      "denominator": 3,
+      "percent": 100.0
+    },
+    "changed_context_false_acceptance": {
+      "numerator": 0,
+      "denominator": 3,
+      "percent": 0.0
+    },
+    "context_policy_correctness": {
+      "numerator": 51,
+      "denominator": 51,
+      "percent": 100.0
+    },
+    "failure_reasons": {
+      "correct_rejection_changed_context": 3
+    }
+  },
+  "groups": {
+    "direct": {
+      "sessions": 75,
+      "accounts": 38,
+      "included_sessions": 67,
+      "included_registrations": 37,
+      "technical_errors": 5,
+      "wrong_passwords": 3,
+      "technical_error_reasons": {
+        "page_unload": 1,
+        "replaced_attempt": 1,
+        "missing_enrollment_baseline": 3
+      },
+      "raw_failure_reasons": {
+        "Incorrect password": 3,
+        "Session ended: page_unload": 1,
+        "Session replaced by a new attempt": 1,
+        "Missing enrolled fingerprint baseline": 3
+      },
+      "eligible_logins": 30,
+      "same_context_logins": 30,
+      "changed_context_logins": 0,
+      "unknown_context_logins": 0,
+      "overall_acceptance": {
+        "numerator": 30,
+        "denominator": 30,
+        "percent": 100.0
+      },
+      "same_context_acceptance": {
+        "numerator": 30,
+        "denominator": 30,
+        "percent": 100.0
+      },
+      "same_context_false_rejection": {
+        "numerator": 0,
+        "denominator": 30,
+        "percent": 0.0
+      },
+      "changed_context_correct_rejection": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "changed_context_false_acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "context_policy_correctness": {
+        "numerator": 30,
+        "denominator": 30,
+        "percent": 100.0
+      },
+      "failure_reasons": {}
+    },
+    "relayed": {
+      "sessions": 26,
+      "accounts": 18,
+      "included_sessions": 21,
+      "included_registrations": 0,
+      "technical_errors": 4,
+      "wrong_passwords": 1,
+      "technical_error_reasons": {
+        "system_busy": 2,
+        "timeout": 1,
+        "page_unload": 1
+      },
+      "raw_failure_reasons": {
+        "Audio or Canvas fingerprint does not match the baseline": 3,
+        "Testing system is busy": 2,
+        "Session timed out": 1,
+        "Incorrect password": 1,
+        "Session ended: page_unload": 1
+      },
+      "eligible_logins": 21,
+      "same_context_logins": 18,
+      "changed_context_logins": 3,
+      "unknown_context_logins": 0,
+      "overall_acceptance": {
+        "numerator": 18,
+        "denominator": 21,
+        "percent": 85.71428571428571
+      },
+      "same_context_acceptance": {
+        "numerator": 18,
+        "denominator": 18,
+        "percent": 100.0
+      },
+      "same_context_false_rejection": {
+        "numerator": 0,
+        "denominator": 18,
+        "percent": 0.0
+      },
+      "changed_context_correct_rejection": {
+        "numerator": 3,
+        "denominator": 3,
+        "percent": 100.0
+      },
+      "changed_context_false_acceptance": {
+        "numerator": 0,
+        "denominator": 3,
+        "percent": 0.0
+      },
+      "context_policy_correctness": {
+        "numerator": 21,
+        "denominator": 21,
+        "percent": 100.0
+      },
+      "failure_reasons": {
+        "correct_rejection_changed_context": 3
+      }
+    },
+    "unclassified": {
+      "sessions": 0,
+      "accounts": 0,
+      "included_sessions": 0,
+      "included_registrations": 0,
+      "technical_errors": 0,
+      "wrong_passwords": 0,
+      "technical_error_reasons": {},
+      "raw_failure_reasons": {},
+      "eligible_logins": 0,
+      "same_context_logins": 0,
+      "changed_context_logins": 0,
+      "unknown_context_logins": 0,
+      "overall_acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "same_context_acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "same_context_false_rejection": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "changed_context_correct_rejection": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "changed_context_false_acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "context_policy_correctness": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "failure_reasons": {}
+    }
+  },
+  "technical_error_reasons": {
+    "system_busy": 2,
+    "timeout": 1,
+    "page_unload": 2,
+    "replaced_attempt": 1,
+    "missing_enrollment_baseline": 3
+  },
+  "platform_counts": {
+    "iPhone": 4,
+    "Linux x86_64": 3,
+    "Win32": 18,
+    "Linux aarch64": 7,
+    "MacIntel": 2,
+    "Linux armv81": 3,
+    "Linux armv8l": 1
+  },
+  "interval_mean_minutes": 360.0079159669935,
+  "interval_gaps": 51,
+  "interval_accounts": 31,
+  "relay_markers": {
+    "rows": 53,
+    "unique_ids": 53,
+    "duplicates": 0,
+    "matched_ids": 26,
+    "unmatched_ids": 27,
+    "username_conflicts": []
+  },
+  "performance": {
+    "files": 97,
+    "matched_events": 96,
+    "orphan_reports": [
+      {
+        "username": "user_0022",
+        "session_id": "772a3aa9cec9070a06b370664291b7f9",
+        "path": "users/user_0022/performance/772a3aa9cec9070a06b370664291b7f9.json"
+      }
+    ],
+    "missing_reports": [
+      {
+        "username": "user_0010",
+        "session_id": "3c48473ff09fa06b05a3eebc86685eb8",
+        "group": "relayed",
+        "event_type": "login",
+        "included": false,
+        "exclusion": "technical"
+      },
+      {
+        "username": "user_0013",
+        "session_id": "9105641f3ba7aae811a0043b2c15943d",
+        "group": "direct",
+        "event_type": "login",
+        "included": false,
+        "exclusion": "technical"
+      },
+      {
+        "username": "user_0022",
+        "session_id": "9141441d4e8797a302d7c504e5f0aa0b",
+        "group": "relayed",
+        "event_type": "login",
+        "included": false,
+        "exclusion": "technical"
+      },
+      {
+        "username": "user_0031",
+        "session_id": "2260c8740c701bb5b278f43015f2a472",
+        "group": "direct",
+        "event_type": "registration",
+        "included": false,
+        "exclusion": "technical"
+      },
+      {
+        "username": "user_0035",
+        "session_id": "a79130703068c68379f59161a8131235",
+        "group": "direct",
+        "event_type": "registration",
+        "included": true,
+        "exclusion": null
+      }
+    ],
+    "invalid_reports": [],
+    "outcome_disagreements": [
+      {
+        "username": "user_0005",
+        "session_id": "dabb5a7bacd5f0d38ccd0cc92dc5e7cf",
+        "event_result": "failure",
+        "performance_outcome": "error",
+        "exclusion": "wrong_password"
+      },
+      {
+        "username": "user_0016",
+        "session_id": "a1a477db270d16dc1839f65b6f23fef5",
+        "event_result": "failure",
+        "performance_outcome": "error",
+        "exclusion": "wrong_password"
+      },
+      {
+        "username": "user_0025",
+        "session_id": "3caa383eccd55b50bd41346838c86b09",
+        "event_result": "failure",
+        "performance_outcome": "error",
+        "exclusion": "wrong_password"
+      },
+      {
+        "username": "user_0025",
+        "session_id": "45da9e3867d0253037c4ab7adef583c1",
+        "event_result": "failure",
+        "performance_outcome": "error",
+        "exclusion": "wrong_password"
+      }
+    ],
+    "included_reports": 87,
+    "included_by_group": {
+      "direct": 66,
+      "relayed": 21
+    }
+  },
+  "excluded_previous_evaluation_sessions": 0,
+  "source_warnings": []
+}

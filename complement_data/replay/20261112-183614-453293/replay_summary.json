@@ -1,0 +1,104 @@
+{
+  "started_utc": "2026-11-12T18:39:22.717981+00:00",
+  "server_url": "http://127.0.0.1:5001",
+  "reconstruction_mapping": "recorded-position",
+  "attempts_per_mode": 3,
+  "eligible_accounts": 37,
+  "skipped": [
+    {
+      "username": "user_0031",
+      "reason": "ValueError: No enrolled canvas baseline"
+    }
+  ],
+  "password_hashes_restored": 37,
+  "baselines_unchanged": 37,
+  "all_results_matched_server_events": true,
+  "finished_utc": "2026-11-12T18:40:29.892548+00:00",
+  "modes": {
+    "unchanged": {
+      "submitted_attempts": 111,
+      "decision_acceptance": {
+        "accepted": 0,
+        "attempts": 111,
+        "percent": 0.0
+      },
+      "submitted_acceptance": {
+        "accepted": 0,
+        "attempts": 111,
+        "percent": 0.0
+      },
+      "errors": 0,
+      "tested_accounts": 37,
+      "successful_accounts": 0,
+      "canvas_matches": {
+        "accepted": 0,
+        "attempts": 111,
+        "percent": 0.0
+      },
+      "canvas_rearrangement_ms": {
+        "n": 111,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "audio_matches": {
+        "accepted": 0,
+        "attempts": 111,
+        "percent": 0.0
+      },
+      "audio_rearrangement_ms": {
+        "n": 111,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "rearranged": {
+      "submitted_attempts": 111,
+      "decision_acceptance": {
+        "accepted": 70,
+        "attempts": 111,
+        "percent": 63.06306306306306
+      },
+      "submitted_acceptance": {
+        "accepted": 70,
+        "attempts": 111,
+        "percent": 63.06306306306306
+      },
+      "errors": 0,
+      "tested_accounts": 37,
+      "successful_accounts": 28,
+      "canvas_matches": {
+        "accepted": 111,
+        "attempts": 111,
+        "percent": 100.0
+      },
+      "canvas_rearrangement_ms": {
+        "n": 111,
+        "mean": 14.11510990990991,
+        "median": 13.6694,
+        "p95": 15.5103,
+        "min": 13.0822,
+        "max": 29.1383
+      },
+      "audio_matches": {
+        "accepted": 70,
+        "attempts": 111,
+        "percent": 63.06306306306306
+      },
+      "audio_rearrangement_ms": {
+        "n": 111,
+        "mean": 0.09333153153153154,
+        "median": 0.088,
+        "p95": 0.1447,
+        "min": 0.0498,
+        "max": 0.1697
+      }
+    }
+  },
+  "tested_accounts": 37
+}

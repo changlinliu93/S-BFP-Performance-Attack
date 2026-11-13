@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "accounts": 38,
+  "historical_sessions_unchanged": 101,
+  "live_replay_sessions_matched": 222,
+  "unique_fresh_challenges": 444,
+  "original_capture_ids_reused": 0,
+  "baseline_fields_unchanged": 38,
+  "password_hash_restoration_verified_by_runner": 37,
+  "pending_password_recovery": false,
+  "historical_mean_verified_by_independent_span_identity": true,
+  "submitted_unchanged_bytes_verified": true,
+  "rearranged_pixels_and_pcm_pieces_preserved": true,
+  "native_server_timings_present": true,
+  "frozen_performance_sha256_verified": 97,
+  "historical_session_classifications_checked": 101,
+  "relay_marker_join_verified": true,
+  "latency_stage_means_independently_verified": 288
+}

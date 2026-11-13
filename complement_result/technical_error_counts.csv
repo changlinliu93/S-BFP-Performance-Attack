@@ -1,0 +1,6 @@
+﻿Reason,Direct,Relayed,Total
+missing_enrollment_baseline,3,0,3
+page_unload,1,1,2
+replaced_attempt,1,0,1
+system_busy,0,2,2
+timeout,0,1,1

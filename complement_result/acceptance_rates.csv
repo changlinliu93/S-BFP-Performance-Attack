@@ -1,0 +1,7 @@
+﻿Measure,Direct,Relayed,All
+Same-context acceptance,30/30 (100.00%),18/18 (100.00%),48/48 (100.00%)
+Same-context false rejection,0/30 (0.00%),0/18 (0.00%),0/48 (0.00%)
+Changed-context correct rejection,N/A (0 eligible),3/3 (100.00%),3/3 (100.00%)
+Changed-context false acceptance,N/A (0 eligible),0/3 (0.00%),0/3 (0.00%)
+Context-policy correctness,30/30 (100.00%),21/21 (100.00%),51/51 (100.00%)
+Overall login acceptance,30/30 (100.00%),18/21 (85.71%),48/51 (94.12%)

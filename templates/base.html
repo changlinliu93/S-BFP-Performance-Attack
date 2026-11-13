@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>S-BFP Testing Platform</title>
+  <style>
+    /* ========== Global Base Styles ========== */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f8fafc;
+      color: #333;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    /* ========== Authentication Modal Styles ========== */
+    #overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .auth-box {
+      background: white;
+      padding: 40px 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      width: 320px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .auth-box h3 {
+      margin-bottom: 24px;
+      color: #0f172a;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .auth-box input {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 8px 0;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .auth-box input:focus {
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+    }
+    .auth-box button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(90deg, #14b8a6, #06b6d4);
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background 0.25s;
+    }
+    .auth-box button:hover {
+      background: linear-gradient(90deg, #0d9488, #0891b2);
+    }
+    .auth-box a {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .auth-box a:hover {
+      color: #0e7490;
+    }
+    #passwordWrapper {
+      width: 100%;
+    }
+    .auth-helper {
+      font-size: 12px;
+      color: #64748b;
+      margin: 4px 0 0;
+      min-height: 18px;
+    }
+    .consent-panel {
+      display: none;
+      margin-top: 12px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #475569;
+    }
+    .consent-panel label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .consent-panel input {
+      width: auto;
+      margin: 2px 0 0;
+      flex: 0 0 auto;
+    }
+
+    .generated-password {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
+      text-align: left;
+    }
+    .generated-password label {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .generated-password-value {
+      font-family: monospace;
+      font-size: 14px;
+      padding: 8px 10px;
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+    .generated-password button {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      background: #14b8a6;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .generated-password button:hover {
+      background: #0d9488;
+    }
+
+    /* ========== Test Status Modal Styles ========== */
+    #test-status-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 9800;
+    }
+    #test-status-box {
+      background: white;
+      padding: 24px 32px;
+      border-radius: 12px;
+      width: 360px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      font-size: 16px;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+    .fingerprint-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: none;
+      margin: 0 auto 16px;
+      background-size: cover;
+    }
+    .fingerprint-icon.success {
+      display: inline-flex;
+      background-image:
+        repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0 6px, transparent 6px 12px),
+        radial-gradient(circle at center, #22c55e 0%, #16a34a 70%, rgba(34, 197, 94, 0.7) 100%);
+    }
+    .fingerprint-icon.error {
+      display: inline-flex;
+      background-image:
+        repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0 6px, transparent 6px 12px),
+        radial-gradient(circle at center, #ef4444 0%, #dc2626 70%, rgba(239, 68, 68, 0.7) 100%);
+    }
+  </style>
+
+    <script type="module">
+    import { getFullFingerprint } from "/static/preliminary_fingerprint.js";
+    import { PerformanceMonitor, adjustedEndToEnd } from "/static/performance_monitor.js";
+
+    const performanceReport = {
+      schema_version: 2,
+      session_id: null,
+      shared: null,
+      modalities: {},
+      registration_wait_ms: 0,
+      e2e_wall_ms: null,
+      e2e_adjusted_ms: null,
+      outcome: null,
+    };
+    window.sBfpPerformance = performanceReport;
+    let performanceMonitor = null;
+    let registrationWaitStarted = null;
+    let performanceToken = null;
+    let performanceSave = null;
+
+    function beginPerformance() {
+      performanceMonitor = new PerformanceMonitor("shared");
+      performanceToken = null;
+      performanceSave = null;
+      setPerformanceSaveStatus("");
+      Object.assign(performanceReport, {
+        session_id: null,
+        shared: performanceMonitor.report,
+        modalities: {},
+        registration_wait_ms: 0,
+        e2e_wall_ms: null,
+        e2e_adjusted_ms: null,
+        outcome: null,
+      });
+      registrationWaitStarted = null;
+      renderPerformance();
+    }
+
+    function finishPerformance(outcome) {
+      if (!performanceMonitor || performanceMonitor.finished) return;
+      performanceReport.outcome = outcome?.result || "error";
+      performanceReport.shared = performanceMonitor.finish(performanceReport.outcome);
+      performanceReport.e2e_wall_ms = performanceReport.shared.elapsed_wall_ms;
+      performanceReport.e2e_adjusted_ms = adjustedEndToEnd(
+        performanceReport.shared,
+        performanceReport.modalities,
+        performanceReport.registration_wait_ms,
+      );
+      renderPerformance();
+      if (performanceToken && performanceReport.session_id) {
+        performanceSave = {
+          body: JSON.stringify({ token: performanceToken, report: performanceReport }),
+          pending: false,
+        };
+        savePerformance(performanceSave);
+      } else {
+        setPerformanceSaveStatus("Server save unavailable for this attempt. Download JSON to keep this report.");
+      }
+    }
+
+    function setPerformanceSaveStatus(message, retry = false) {
+      document.getElementById("performanceSaveStatus").textContent = message;
+      document.getElementById("retryPerformanceSave").hidden = !retry;
+    }
+
+    async function savePerformance(snapshot) {
+      if (!snapshot || snapshot.pending) return;
+      snapshot.pending = true;
+      setPerformanceSaveStatus("Saving performance report to server…");
+      try {
+        // The measured report is complete before this separate persistence request.
+        const response = await fetch("/user/performance", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: snapshot.body,
+          signal: AbortSignal.timeout(15000),
+        });
+        const result = await response.json();
+        if (!response.ok || result.status !== "ok") {
+          throw new Error(result.error || `HTTP ${response.status}`);
+        }
+        if (snapshot === performanceSave) {
+          setPerformanceSaveStatus(`Saved on server · ${result.path}`);
+        }
+      } catch (error) {
+        if (snapshot === performanceSave) {
+          setPerformanceSaveStatus(`Server save failed · ${error.message}. Retry or download JSON.`, true);
+        }
+      } finally {
+        snapshot.pending = false;
+      }
+    }
+
+    function receivePerformance(source, report) {
+      if (!performanceMonitor || performanceMonitor.finished || report?.modality !== source) return;
+      performanceReport.modalities[source] = report;
+      renderPerformance();
+    }
+
+    function renderPerformance() {
+      const table = document.getElementById("performanceRows");
+      const serverTable = document.getElementById("performanceServerRows");
+      if (!table || !serverTable) return;
+      const format = (value, unit) => value == null ? "—" : `${value.toFixed(unit === "ms" ? 3 : 0)} ${unit}`;
+      const rows = [
+        ["① Static fingerprint / Seed", (report) => report.stages_ms.static, "ms"],
+        ["② Challenge request / response", (report) => report.stages_ms.challenge, "ms"],
+        ["③ Stochastic fingerprint generation", (report) => report.stages_ms.dynamic, "ms"],
+        ["④ Result upload / server verification", (report) => report.stages_ms.result, "ms"],
+        ["Pure rendering (within ③)", (report) => report.pure_render_ms, "ms"],
+        ["Modality batch elapsed", (report) => report.elapsed_ms, "ms"],
+        ["Request count", (report) => report.request_count, "requests"],
+        ["Raw RGBA total", (report) => report.modality === "canvas" ? report.artifacts.reduce((sum, item) => sum + item.raw_rgba_bytes, 0) : null, "B"],
+        ["Request bodies ↑", (report) => report.request_body_bytes, "B"],
+        ["Response bodies ↓", (report) => report.response_body_bytes, "B"],
+        ["Full PNG total", (report) => report.modality === "canvas" ? report.artifacts.reduce((sum, item) => sum + item.png_bytes, 0) : null, "B"],
+        ["Full PCM total", (report) => report.modality === "audio" ? report.artifacts.reduce((sum, item) => sum + item.pcm_bytes, 0) : null, "B"],
+      ];
+      const serverRows = [
+        ["Challenge generation", "challenge"],
+        ["Primitive extraction", "primitive"],
+        ["Hash calculation", "hash"],
+        ["Fingerprint verification", "verify"],
+        ["Image decoding", "decode"],
+        ["File / log time excluded", "storage"],
+        ["Request body read / JSON parse", "body_read"],
+        ["Application request total", "total"],
+      ].map(([label, key]) => [label, (report) => report.server_ms[key], "ms"]);
+      function fillTable(target, definitions) {
+        target.replaceChildren();
+        for (const [label, value, unit] of definitions) {
+          const row = document.createElement("tr");
+          const heading = document.createElement("th");
+          heading.textContent = label;
+          row.appendChild(heading);
+          for (const modality of ["canvas", "audio"]) {
+            const cell = document.createElement("td");
+            const report = performanceReport.modalities[modality];
+            cell.textContent = report ? format(value(report), unit) : "—";
+            row.appendChild(cell);
+          }
+          target.appendChild(row);
+        }
+      }
+      fillTable(table, rows);
+      fillTable(serverTable, serverRows);
+      document.getElementById("performanceE2E").textContent =
+        `Adjusted E2E ${format(performanceReport.e2e_adjusted_ms, "ms")} · ` +
+        `Registration wait ${format(performanceReport.registration_wait_ms, "ms")}`;
+      document.getElementById("performanceShared").textContent = performanceReport.shared
+        ? `Shared Static-BFP / Seed ${format(performanceReport.shared.stages_ms.static, "ms")} · ` +
+          `Final server verification ${format(performanceReport.shared.server_ms.verify, "ms")}`
+        : "Waiting for fingerprint collection.";
+      document.getElementById("downloadPerformance").disabled = performanceReport.e2e_adjusted_ms === null;
+      document.getElementById("viewPerformance").hidden = performanceReport.e2e_adjusted_ms === null;
+    }
+
+
+
+    async function captureFingerprint(username) {
+      if (!username) return;
+      try {
+        const fingerprint = await performanceMonitor.measure("static", getFullFingerprint);
+        await performanceMonitor.measure("result", () => performanceMonitor.fetch("static_fingerprint", "/user/fingerprint", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username,
+            timestamp: new Date().toISOString(),
+            fingerprintHash: fingerprint.hash,
+            fingerprintString: fingerprint.string,
+            fingerprint: fingerprint.raw,
+          }),
+        }));
+      } catch (error) {
+        console.error("Static fingerprint capture failed:", error);
+      }
+    }
+
+    const testProgress = {
+      audio: { status: "idle", message: "", serverStable: null },
+      canvas: { status: "idle", message: "", serverStable: null },
+    };
+    let testStatusModal = null;
+    let testStatusText = null;
+    let testStatusIcon = null;
+    let sessionToken = null;
+    let eventType = "login";
+    let finalizing = false;
+    let pendingSessionReleasePayload = null;
+    let sessionHeartbeatTimer = null;
+    let sessionReleased = true;
+    const SESSION_HEARTBEAT_MIN_INTERVAL = 10;
+    let overlayCloseTimer = null;
+
+    function clearSessionHeartbeat() {
+      if (sessionHeartbeatTimer) {
+        clearInterval(sessionHeartbeatTimer);
+        sessionHeartbeatTimer = null;
+      }
+    }
+
+    function scheduleSessionHeartbeat(timeoutSeconds) {
+      clearSessionHeartbeat();
+      const intervalSeconds = Math.max(
+        SESSION_HEARTBEAT_MIN_INTERVAL,
+        Math.floor((timeoutSeconds || 60) / 2)
+      );
+      sessionHeartbeatTimer = setInterval(() => {
+        if (!sessionToken || sessionReleased) return;
+        sendSessionHeartbeat().catch((error) => {
+          console.warn("Heartbeat failed:", error);
+        });
+      }, intervalSeconds * 1000);
+    }
+
+    async function acquireExclusiveSession(username) {
+      try {
+        const res = await performanceMonitor.fetch("session_acquire", "/session/acquire", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username }),
+        });
+        const result = await performanceMonitor.read(res, "json");
+        if (!res.ok) {
+          const err = result.error || result.message || res.statusText;
+          return { success: false, error: err };
+        }
+        if (result.status === "busy") {
+          return {
+            success: false,
+            busy: true,
+            owner: result.owner,
+            startedAt: result.startedAt || null,
+          };
+        }
+        if (result.status !== "ok" || !result.token) {
+          return {
+            success: false,
+            error: result.error || "Failed to acquire exclusive session.",
+          };
+        }
+        sessionToken = result.token;
+        pendingSessionReleasePayload = {
+          username: result.username || username,
+          token: result.token,
+        };
+        sessionReleased = false;
+        scheduleSessionHeartbeat(result.timeout);
+        return { success: true, timeout: result.timeout };
+      } catch (error) {
+        return { success: false, error: error.message || String(error) };
+      }
+    }
+
+    async function sendSessionHeartbeat() {
+      if (!window.currentUser || !sessionToken) return;
+      const res = await fetch("/session/heartbeat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: window.currentUser, token: sessionToken }),
+      });
+      if (!res.ok) {
+        const result = await res.json().catch(() => ({}));
+        throw new Error(result.error || res.statusText);
+      }
+    }
+
+    async function releaseExclusiveSession(reason = "manual", useBeacon = false, force = false) {
+      const payload = pendingSessionReleasePayload || (sessionToken
+        ? { username: window.currentUser, token: sessionToken }
+        : null);
+      if (!window.currentUser || !payload) return;
+      if (sessionReleased && !force) return;
+
+      sessionReleased = true;
+      clearSessionHeartbeat();
+      const errors = Object.values(testProgress).filter(item => item.status === "error").map(item => item.message);
+      const bodyPayload = { ...payload, reason, error: errors.join("; ") || null };
+
+      if (useBeacon && navigator.sendBeacon) {
+        try {
+          const blob = new Blob([JSON.stringify(bodyPayload)], {
+            type: "application/json",
+          });
+          navigator.sendBeacon("/session/release", blob);
+          sessionToken = null;
+          pendingSessionReleasePayload = null;
+          return;
+        } catch (error) {
+          console.warn("Failed to send beacon release:", error);
+        }
+      }
+
+      try {
+        const outcome = await performanceMonitor.measure("result", async () => {
+          const res = await performanceMonitor.fetch("final_verification", "/session/release", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bodyPayload),
+          });
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+          }
+          return performanceMonitor.read(res, "json");
+        });
+        sessionToken = null;
+        pendingSessionReleasePayload = null;
+        return outcome;
+      } catch (error) {
+        console.warn("Failed to release session:", error);
+        if (reason === "tests_complete" || reason === "test_error") {
+          sessionReleased = false;
+          throw error;
+        }
+        if (navigator.sendBeacon) {
+          try {
+            const blob = new Blob([JSON.stringify(bodyPayload)], {
+              type: "application/json",
+            });
+            if (navigator.sendBeacon("/session/release", blob)) {
+              sessionToken = null;
+              pendingSessionReleasePayload = null;
+              return;
+            }
+          } catch (beaconError) {
+            console.warn("Beacon release attempt failed:", beaconError);
+          }
+        }
+        if (force) {
+          pendingSessionReleasePayload = { ...bodyPayload };
+        } else {
+          sessionReleased = false;
+          pendingSessionReleasePayload = { ...bodyPayload };
+        }
+      }
+    }
+
+    function ensureTestModalElements() {
+      if (!testStatusModal) {
+        testStatusModal = document.getElementById("test-status-modal");
+      }
+      if (!testStatusText) {
+        testStatusText = document.getElementById("test-status-text");
+      }
+      if (!testStatusIcon) {
+        testStatusIcon = document.getElementById("test-status-icon");
+      }
+    }
+
+    function setStatusIcon(mode) {
+      ensureTestModalElements();
+      if (!testStatusIcon) return;
+      testStatusIcon.classList.remove("success", "error");
+      if (!mode) {
+        testStatusIcon.style.display = "none";
+        return;
+      }
+      testStatusIcon.style.display = "inline-flex";
+      testStatusIcon.classList.add(mode === "success" ? "success" : "error");
+    }
+
+    function showTestingOverlay() {
+      ensureTestModalElements();
+      if (!testStatusModal || !testStatusText) return;
+      testStatusText.textContent = "Tests are running, please do not leave or interact with the page.";
+      testStatusModal.style.display = "flex";
+    }
+
+    function resetTestProgress() {
+      finalizing = false;
+      testProgress.audio = { status: "pending", message: "", serverStable: null };
+      testProgress.canvas = { status: "pending", message: "", serverStable: null };
+      setStatusIcon(null);
+      showTestingOverlay();
+    }
+
+    function updateTestModalText() {
+      ensureTestModalElements();
+      if (!testStatusModal || !testStatusText) return;
+
+      const sources = Object.keys(testProgress);
+      const hasError = sources.some((key) => testProgress[key].status === "error");
+
+      const allDone = sources.every(key => ["complete", "error"].includes(testProgress[key].status));
+      if (allDone) {
+        if (finalizing) return;
+        finalizing = true;
+        releaseExclusiveSession(hasError ? "test_error" : "tests_complete")
+          .then(outcome => {
+            finishPerformance(outcome);
+            const success = outcome?.result === "success";
+            setStatusIcon(success ? "success" : "error");
+            testStatusText.textContent = outcome?.message || "Login failed: unable to finalize verification.";
+            if (!success) {
+              localStorage.removeItem("currentUser");
+              window.currentUser = null;
+            }
+          })
+          .catch(error => {
+            finishPerformance({ result: "error" });
+            setStatusIcon("error");
+            testStatusText.textContent = `${eventType === "login" ? "Login" : "Registration"} failed: ${error.message}`;
+            localStorage.removeItem("currentUser");
+            window.currentUser = null;
+          });
+        testStatusModal.style.display = "flex";
+        return;
+      }
+
+      // Default message during execution
+      setStatusIcon(null);
+      testStatusText.textContent = "Tests are running, please do not leave or interact with the page.";
+      testStatusModal.style.display = "flex";
+    }
+
+    function handleTestStatusUpdate(source, type, payload) {
+      if (!testProgress[source]) return;
+      if (payload?.performance) receivePerformance(source, payload.performance);
+
+      if (type === "testStarted") {
+        testProgress[source] = { status: "running", message: "", serverStable: null };
+        showTestingOverlay();
+      } else if (type === "testComplete") {
+        const serverStable =
+          typeof payload?.serverAllStable === "boolean"
+            ? payload.serverAllStable
+            : typeof payload?.allStable === "boolean"
+            ? payload.allStable
+            : null;
+        testProgress[source] = {
+          status: "complete",
+          message: payload?.alertMessage || "",
+          serverStable,
+        };
+      } else if (type === "testError") {
+        const message = payload?.message || "Unknown error";
+        testProgress[source] = { status: "error", message, serverStable: false };
+      }
+
+      updateTestModalText();
+    }
+
+    window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin) return;
+      const data = event.data;
+      if (!data || typeof data !== "object") return;
+      const { source, type, payload } = data;
+      if (!source || !type) return;
+      handleTestStatusUpdate(source, type, payload);
+    });
+
+    window.addEventListener("beforeunload", () => {
+      releaseExclusiveSession("page_unload", true);
+    });
+
+    function showRegisterPopup(onSuccess) {
+      const overlay = document.getElementById("overlay");
+      const usernameInput = document.getElementById("usernameInput");
+      const passwordInput = document.getElementById("passwordInput");
+      const passwordWrapper = document.getElementById("passwordWrapper");
+      const helper = document.getElementById("authHelper");
+      const actionBtn = document.getElementById("actionBtn");
+      const toggleLink = document.getElementById("toggleLink");
+      const generatedPasswordContainer = document.getElementById("generatedPasswordContainer");
+      const generatedPasswordValue = document.getElementById("generatedPasswordValue");
+      const copyPasswordBtn = document.getElementById("copyPasswordBtn");
+      const consentPanel = document.getElementById("consentPanel");
+      const consentCheckbox = document.getElementById("consentCheckbox");
+
+      let mode = "login";
+      let registrationFinalized = false;
+
+      function clearOverlayTimer() {
+        if (overlayCloseTimer) {
+          clearTimeout(overlayCloseTimer);
+          overlayCloseTimer = null;
+        }
+      }
+
+      function closeOverlay() {
+        clearOverlayTimer();
+        if (overlay && overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }
+
+      function finalizeRegistration(username) {
+        if (registrationFinalized) return;
+        registrationFinalized = true;
+        if (registrationWaitStarted !== null) {
+          performanceReport.registration_wait_ms += performance.now() - registrationWaitStarted;
+          registrationWaitStarted = null;
+        }
+        clearOverlayTimer();
+        closeOverlay();
+        if (typeof onSuccess === "function") onSuccess(username);
+      }
+
+      function resetGeneratedPassword() {
+        if (generatedPasswordContainer) {
+          generatedPasswordContainer.style.display = "none";
+        }
+        if (generatedPasswordValue) {
+          generatedPasswordValue.textContent = "—";
+        }
+        if (helper) {
+          helper.textContent = "";
+        }
+        if (toggleLink) {
+          toggleLink.style.display = "";
+        }
+      }
+
+      if (copyPasswordBtn) {
+        copyPasswordBtn.onclick = async () => {
+          const passwordValue = generatedPasswordValue ? generatedPasswordValue.textContent : "";
+          const password = passwordValue.trim();
+          if (!password || password === "—") {
+            if (helper) {
+              helper.textContent = "No generated password available yet.";
+            }
+            return;
+          }
+          try {
+            await navigator.clipboard.writeText(password);
+            if (helper) {
+              helper.textContent = "Assigned password copied to clipboard.";
+            }
+          } catch (err) {
+            console.warn("Copy password failed:", err);
+            if (helper) {
+              helper.textContent = "Unable to copy automatically. Please copy the password manually.";
+            }
+          }
+        };
+      }
+
+      function setMode(newMode) {
+        mode = newMode;
+        registrationFinalized = false;
+        clearOverlayTimer();
+        resetGeneratedPassword();
+
+        const title = document.getElementById("modeTitle");
+        if (!title || !actionBtn || !toggleLink) return;
+
+        if (mode === "login") {
+          title.textContent = "Sign In";
+          actionBtn.textContent = "Sign In";
+          toggleLink.textContent = "Don't have an account? Register";
+          if (passwordWrapper) passwordWrapper.style.display = "block";
+          if (passwordInput) {
+            passwordInput.value = "";
+            passwordInput.placeholder = "Password";
+          }
+          if (helper) helper.textContent = "";
+          if (consentPanel) consentPanel.style.display = "none";
+        } else {
+          title.textContent = "Create Account";
+          actionBtn.textContent = "Register";
+          toggleLink.textContent = "Already have an account? Sign in";
+          if (passwordWrapper) passwordWrapper.style.display = "none";
+          if (passwordInput) {
+            passwordInput.value = "";
+          }
+          if (helper) {
+            helper.textContent =
+              "A strong password will be generated automatically. It will appear below after registration.";
+          }
+          if (consentPanel) consentPanel.style.display = "block";
+          if (consentCheckbox) consentCheckbox.checked = false;
+        }
+      }
+
+      setMode(mode);
+
+      if (toggleLink) {
+        toggleLink.onclick = (e) => {
+          e.preventDefault();
+          setMode(mode === "login" ? "register" : "login");
+        };
+      }
+
+      if (actionBtn) {
+        actionBtn.onclick = async () => {
+          const usernameValue = usernameInput ? usernameInput.value : "";
+          const username = usernameValue.trim();
+          const password = passwordInput ? passwordInput.value : "";
+          if (!username) {
+            alert("Please enter a username.");
+            return;
+          }
+          if (mode === "login" && !password) {
+            alert("Please enter your password.");
+            return;
+          }
+          if (mode === "register" && (!consentCheckbox || !consentCheckbox.checked)) {
+            alert("Please review and accept the research data-collection notice before registering.");
+            return;
+          }
+
+          const endpoint = mode === "login" ? "/login" : "/register";
+          const payload = mode === "login"
+            ? { username, password }
+            : { username, consent: true };
+
+          try {
+            beginPerformance();
+            payload.seed = (await performanceMonitor.measure("static", getFullFingerprint)).hash;
+            const res = await performanceMonitor.fetch("credentials", endpoint, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            const result = await performanceMonitor.read(res, "json");
+            performanceReport.session_id = result.session_id || null;
+            performanceToken = result.performance_token || null;
+            if (!res.ok || result.status !== "ok") {
+              finishPerformance({ result: "error" });
+              const action = mode === "login" ? "Sign-in" : "Registration";
+              alert(`${action} failed: ${result.error || "Unknown error"}`);
+              return;
+            }
+
+            eventType = mode === "register" ? "registration" : "login";
+            const generatedPassword = mode === "register" ? result.password : null;
+            const lockResult = await acquireExclusiveSession(result.username);
+            if (!lockResult.success) {
+              finishPerformance({ result: "error" });
+              let message = "";
+              if (generatedPassword) {
+                message =
+                  `Registration successful.\nGenerated password: ${generatedPassword}\n` +
+                  "The testing system is currently in use. Please keep the password safe and try again later.";
+              } else if (lockResult.busy) {
+                message =
+                  `Password accepted, but the testing system is currently in use by ${lockResult.owner || "another user"}.\n` +
+                  "Please try again later.";
+              } else {
+                message =
+                  `Password accepted, but the system cannot start a session right now.\nReason: ${lockResult.error || "Unknown error"}`;
+              }
+              alert(message);
+              return;
+            }
+
+            localStorage.setItem("currentUser", result.username);
+            window.currentUser = result.username;
+
+            if (mode === "login") {
+              await captureFingerprint(result.username);
+              finalizeRegistration(result.username);
+              return;
+            }
+
+            await captureFingerprint(result.username);
+            registrationWaitStarted = performance.now();
+
+            if (generatedPasswordContainer) {
+              generatedPasswordContainer.style.display = "block";
+            }
+            if (generatedPasswordValue) {
+              generatedPasswordValue.textContent = generatedPassword || "—";
+            }
+            if (toggleLink) {
+              toggleLink.style.display = "none";
+            }
+            if (helper) {
+              helper.textContent =
+                "Assigned password generated. Copy it below, then click Continue to begin testing. This dialog will close automatically after 15 seconds.";
+            }
+            actionBtn.textContent = "Continue";
+            actionBtn.onclick = () => finalizeRegistration(result.username);
+            overlayCloseTimer = setTimeout(
+              () => finalizeRegistration(result.username),
+              15000
+            );
+          } catch (error) {
+            finishPerformance({ result: "error" });
+            console.error("Authentication request failed:", error);
+            alert("Request failed, please try again later.");
+          }
+        };
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      renderPerformance();
+      document.getElementById("viewPerformance").addEventListener("click", () => {
+        document.getElementById("test-status-modal").style.display = "none";
+        document.getElementById("performancePanel").scrollIntoView({ behavior: "smooth" });
+      });
+      document.getElementById("retryPerformanceSave").addEventListener("click", () => savePerformance(performanceSave));
+      document.getElementById("downloadPerformance").addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(performanceReport, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `s-bfp-performance-${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+      showRegisterPopup((username) => {
+        resetTestProgress();
+        const audioFrame = document.getElementById("sys3");
+        const canvasFrame = document.getElementById("sys4");
+        if (audioFrame) {
+          audioFrame.src = "/audio/?autostart=1";
+        }
+        if (canvasFrame) {
+          canvasFrame.src = "/canvas/?autostart=1";
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>S-BFP Testing Platform</h1>
+  <div style="display: flex; flex-wrap: wrap; gap: 2%; justify-content: center; margin: 0 auto 20px; max-width: 1500px;">
+    <iframe id="sys3" style="flex: 1 1 45%; min-width: 320px; height: 500px; border: none; border-radius: 12px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);"></iframe>
+    <iframe id="sys4" style="flex: 1 1 45%; min-width: 320px; height: 500px; border: none; border-radius: 12px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);"></iframe>
+  </div>
+
+  <section id="performancePanel" style="max-width: 1100px; margin: 24px auto; padding: 20px; background: white; border-radius: 12px; overflow-x: auto;">
+    <style>
+      #performancePanel table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+      #performancePanel th, #performancePanel td { padding: 9px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+      #performancePanel td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    </style>
+    <h2>Performance breakdown</h2>
+    <p>Batch totals · Canvas 1 run · Audio 1 run · File / log time excluded</p>
+    <table>
+      <thead><tr><th>Stage / metric</th><th>Canvas</th><th>Audio</th></tr></thead>
+      <tbody id="performanceRows"></tbody>
+    </table>
+    <details>
+      <summary>Server breakdown (included in request time)</summary>
+      <table>
+        <thead><tr><th>Server metric</th><th>Canvas</th><th>Audio</th></tr></thead>
+        <tbody id="performanceServerRows"></tbody>
+      </table>
+    </details>
+    <p id="performanceShared"></p>
+    <p id="performanceE2E"></p>
+    <p id="performanceSaveStatus" role="status" aria-live="polite"></p>
+    <button id="retryPerformanceSave" type="button" hidden>Retry server save</button>
+    <button id="downloadPerformance" type="button" disabled>Download performance JSON</button>
+  </section>
+
+  <!-- Authentication -->
+  <div id="overlay">
+    <div class="auth-box">
+      <h3 id="modeTitle">Sign In</h3>
+      <input id="usernameInput" placeholder="Username">
+      <div id="passwordWrapper">
+        <input id="passwordInput" type="password" placeholder="Password">
+      </div>
+      <p id="authHelper" class="auth-helper"></p>
+      <div id="consentPanel" class="consent-panel">
+        <label>
+          <input id="consentCheckbox" type="checkbox">
+          <span>
+            I voluntarily consent to this research demo collecting pseudonymous browser-rendering
+            hashes, raw audio renderings, canvas images, and coarse device/browser characteristics
+            for evaluating S-BFP stability. The
+            public artifact excludes IP addresses, raw rendered images, and full User-Agent strings.
+          </span>
+        </label>
+      </div>
+      <div id="generatedPasswordContainer" class="generated-password">
+        <label>Assigned Password</label>
+        <div id="generatedPasswordValue" class="generated-password-value">—</div>
+        <button id="copyPasswordBtn" type="button">Copy Password</button>
+      </div>
+      <button id="actionBtn">Sign In</button>
+      <a id="toggleLink" href="#">Don't have an account? Register</a>
+    </div>
+  </div>
+
+
+  <!-- Test Status Modal -->
+  <div id="test-status-modal">
+    <div id="test-status-box">
+      <div id="test-status-icon" class="fingerprint-icon"></div>
+      <div id="test-status-text">Tests are running, please do not leave or interact with the page.</div>
+      <button id="viewPerformance" type="button" hidden>View performance breakdown</button>
+    </div>
+  </div>
+</body>
+</html>

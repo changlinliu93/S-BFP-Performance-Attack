@@ -1,0 +1,245 @@
+{
+  "mode": "rearranged",
+  "modalities": {
+    "canvas": {
+      "measurements": [
+        {
+          "iteration": 1,
+          "challenge_id": "cf9faab90dcd66d097416e49f17d2e9d",
+          "http_status": 200,
+          "fingerprint": "5734d2327212845144c3ee61707e5bfcd8f6b6bbcc2b3b69d921f96666de8189",
+          "error": null,
+          "matches_recorded_baseline": true,
+          "raw_differs_from_recording": true,
+          "raw_sha256": "44b5a6990e47095e52fea400a5e23a0791ceb2b495a3d5fa72192ecf2a21956c",
+          "timing": {
+            "rearrangement_ms": 13.3928,
+            "challenge_received_to_upload_start_ms": 13.7849
+          },
+          "server_timing": {
+            "challenge": {
+              "challenge": 0.2948,
+              "total": 0.3999,
+              "storage": 0.0
+            },
+            "upload": {
+              "body_read": 0.2523,
+              "decode": 4.2892,
+              "primitive": 2.2645,
+              "hash": 0.1433,
+              "total": 7.5423,
+              "storage": 4.0313
+            }
+          }
+        }
+      ],
+      "timing_summary": {
+        "rearrangement_ms": {
+          "count": 1,
+          "min_ms": 13.3928,
+          "median_ms": 13.3928,
+          "mean_ms": 13.3928,
+          "p95_ms": 13.3928,
+          "max_ms": 13.3928
+        },
+        "challenge_received_to_upload_start_ms": {
+          "count": 1,
+          "min_ms": 13.7849,
+          "median_ms": 13.7849,
+          "mean_ms": 13.7849,
+          "p95_ms": 13.7849,
+          "max_ms": 13.7849
+        }
+      },
+      "report_status": 200,
+      "report_result": {
+        "alertMessage": "Canvas fingerprints matched the baseline.",
+        "allStable": true,
+        "baselineHash": "5734d2327212845144c3ee61707e5bfcd8f6b6bbcc2b3b69d921f96666de8189",
+        "mismatchRuns": [],
+        "session_id": "6098bd7742964c4ae5060a75fd99d49f",
+        "status": "ok",
+        "totalRuns": 1
+      }
+    },
+    "audio": {
+      "measurements": [
+        {
+          "iteration": 1,
+          "challenge_id": "d2cedebf146f06020bd2bfa851e335b2",
+          "http_status": 200,
+          "fingerprint": "024ce34ec3371722b89e352600dd4e994c7df5345693c8c7401371e11c221747",
+          "error": null,
+          "matches_recorded_baseline": true,
+          "raw_differs_from_recording": true,
+          "raw_sha256": "64f58014a6a897894ab03e8c28953bd689ea790dcd7b76d16b667ca0afd0a38c",
+          "timing": {
+            "rearrangement_ms": 0.132,
+            "challenge_received_to_upload_start_ms": 0.1932
+          },
+          "server_timing": {
+            "challenge": {
+              "challenge": 0.259,
+              "total": 0.3444,
+              "storage": 0.0
+            },
+            "upload": {
+              "body_read": 14.6829,
+              "primitive": 9.0434,
+              "hash": 0.0166,
+              "total": 24.2048,
+              "storage": 3.9157
+            }
+          }
+        }
+      ],
+      "timing_summary": {
+        "rearrangement_ms": {
+          "count": 1,
+          "min_ms": 0.132,
+          "median_ms": 0.132,
+          "mean_ms": 0.132,
+          "p95_ms": 0.132,
+          "max_ms": 0.132
+        },
+        "challenge_received_to_upload_start_ms": {
+          "count": 1,
+          "min_ms": 0.1932,
+          "median_ms": 0.1932,
+          "mean_ms": 0.1932,
+          "p95_ms": 0.1932,
+          "max_ms": 0.1932
+        }
+      },
+      "report_status": 200,
+      "report_result": {
+        "alertMessage": "Audio fingerprints matched the baseline.",
+        "allStable": true,
+        "baselineHash": "024ce34ec3371722b89e352600dd4e994c7df5345693c8c7401371e11c221747",
+        "mismatchRuns": [],
+        "session_id": "6098bd7742964c4ae5060a75fd99d49f",
+        "status": "ok",
+        "totalRuns": 1
+      }
+    }
+  },
+  "fresh_challenge_ids_only": true,
+  "reconstruction_mapping": "recorded-position",
+  "iterations_per_modality": 1,
+  "requests": [
+    {
+      "endpoint": "login",
+      "status": 200,
+      "rpc_wall_ms": 114.2469,
+      "rpc_adjusted_ms": 114.2469,
+      "server_ms": {
+        "total": 95.9661,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "session/acquire",
+      "status": 200,
+      "rpc_wall_ms": 15.979,
+      "rpc_adjusted_ms": 15.979,
+      "server_ms": {
+        "total": 0.1148,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "canvas/get_string_config",
+      "status": 200,
+      "rpc_wall_ms": 7.6026,
+      "rpc_adjusted_ms": 7.6026,
+      "server_ms": {
+        "challenge": 0.2948,
+        "total": 0.3999,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "canvas/upload_img",
+      "status": 200,
+      "rpc_wall_ms": 13.7074,
+      "rpc_adjusted_ms": 9.6761,
+      "server_ms": {
+        "body_read": 0.2523,
+        "decode": 4.2892,
+        "primitive": 2.2645,
+        "hash": 0.1433,
+        "total": 7.5423,
+        "storage": 4.0313
+      }
+    },
+    {
+      "endpoint": "user/canvas_stability",
+      "status": 200,
+      "rpc_wall_ms": 17.94,
+      "rpc_adjusted_ms": 11.875900000000001,
+      "server_ms": {
+        "body_read": 0.0514,
+        "verify": 3.6234,
+        "total": 7.7547,
+        "storage": 6.0641
+      }
+    },
+    {
+      "endpoint": "audio/get_snippets_config",
+      "status": 200,
+      "rpc_wall_ms": 3.4418,
+      "rpc_adjusted_ms": 3.4418,
+      "server_ms": {
+        "challenge": 0.259,
+        "total": 0.3444,
+        "storage": 0.0
+      }
+    },
+    {
+      "endpoint": "audio/upload_audio",
+      "status": 200,
+      "rpc_wall_ms": 30.5621,
+      "rpc_adjusted_ms": 26.6464,
+      "server_ms": {
+        "body_read": 14.6829,
+        "primitive": 9.0434,
+        "hash": 0.0166,
+        "total": 24.2048,
+        "storage": 3.9157
+      }
+    },
+    {
+      "endpoint": "user/audio_stability",
+      "status": 200,
+      "rpc_wall_ms": 20.6974,
+      "rpc_adjusted_ms": 15.0505,
+      "server_ms": {
+        "body_read": 0.0595,
+        "verify": 9.3192,
+        "total": 12.6565,
+        "storage": 5.6469
+      }
+    },
+    {
+      "endpoint": "session/release",
+      "status": 200,
+      "rpc_wall_ms": 18.4395,
+      "rpc_adjusted_ms": 15.2472,
+      "server_ms": {
+        "body_read": 0.0411,
+        "verify": 11.8266,
+        "total": 12.0001,
+        "storage": 3.1923
+      }
+    }
+  ],
+  "execution": "sequential Canvas then Audio; no browser seed/render step",
+  "session_id": "6098bd7742964c4ae5060a75fd99d49f",
+  "release_status": 200,
+  "login_outcome": {
+    "message": "Login successful.",
+    "result": "success",
+    "session_id": "6098bd7742964c4ae5060a75fd99d49f",
+    "status": "ok"
+  }
+}
